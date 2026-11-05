@@ -1,0 +1,98 @@
+/* 이 앱 전용 — 공통 style.css 뒤에 읽는다 */
+h3{font-size:16px; font-weight:700; margin:24px 0 8px;}
+.ctrl{display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin:12px 0; font-size:14px;}
+.ctrl label{display:inline-flex; align-items:center; gap:6px;}
+.ctrl input,.ctrl select,.form input,.form select,table input,table select{font:inherit; font-size:14px; padding:6px 8px; border:1px solid var(--line); border-radius:7px; background:#fff; max-width:100%;}
+.ctrl input[type=number]{width:72px;}
+.ctrl input[type=text]{min-width:0;}
+.legend{display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; font-size:12.5px; color:var(--sub); margin:8px 0;}
+
+.form{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:10px 12px; align-items:end; margin:12px 0;}
+.form label{display:flex; flex-direction:column; gap:4px; font-size:13px; color:var(--sub); min-width:0;}
+.form label.wide{grid-column:1/-1;}
+
+/* 목표 열 */
+.targets td input[type=text]{width:100%; min-width:120px;}
+.targets td .x,.rules .x{border:0; background:none; color:var(--danger); cursor:pointer; font-size:13px; text-decoration:underline;}
+
+/* 읽은 표 목록 */
+.tables{list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px;}
+.tables button{width:100%; text-align:left; border:1px solid var(--line); border-radius:10px; background:#fff; padding:10px 12px; cursor:pointer; font:inherit; font-size:13.5px; color:var(--ink);}
+.tables button:hover{border-color:var(--accent);}
+.tables button.cur{border-color:var(--brand); box-shadow:0 0 0 2px #cfe2ee;}
+.tables b{display:block; font-size:14px;}
+.tables .meta{display:block; color:var(--sub); font-size:12.5px; margin-top:2px;}
+.chip{display:inline-block; font-size:11.5px; font-weight:700; border-radius:20px; padding:1px 8px; margin-top:6px; background:#eef2f6; color:var(--sub);}
+.chip.ok{background:#d6ecdf; color:var(--ok);} .chip.off{background:#f0f0f0; color:#888;} .chip.todo{background:#fbe7b5; color:var(--warn);}
+.chip.ai{background:#ece4f7; color:#4a2e86;} .chip.hi{background:#d6ecdf; color:var(--ok);} .chip.mid{background:#fbe7b5; color:var(--warn);} .chip.lo{background:#fdeae7; color:#7a1a0c;}
+.chip.saved{background:#dceaf3; color:#0b3a4f;}
+
+/* 원본 미리보기 */
+.preview{max-height:420px;}
+.preview th.rn,.preview td.rn{position:sticky; left:0; background:#eef2f6; color:var(--sub); font-size:11.5px; text-align:right; z-index:2;}
+.preview td{max-width:220px; overflow:hidden; text-overflow:ellipsis;}
+.preview tr.hd td{background:#dceaf3; font-weight:700;}
+.preview tr.skip td{color:#9aa6b2; text-decoration:line-through;}
+.preview tr.above td{color:var(--sub); background:#fafbfc;}
+.preview td.mf{background:#fff6dc;}
+.preview tr.hd td.mf{background:#cfe0ec;}
+.mf-chip,.mk{display:inline-block; font-size:10.5px; font-weight:700; border-radius:4px; padding:0 5px; vertical-align:middle;}
+.mf-chip{background:#fbe7b5; color:var(--warn);}
+.preview td.mf::after{content:'병'; margin-left:5px; font-size:10px; font-weight:700; color:var(--warn);}
+
+/* 짝짓기 표 */
+.maptable td{vertical-align:top; white-space:normal;}
+.maptable td:first-child{white-space:nowrap; font-weight:700;}
+.maptable td:first-child small{display:block; font-weight:400; color:var(--sub);}
+.maptable select{min-width:190px;}
+.maptable .const{display:block; margin-top:6px; width:100%;}
+.maptable .why{font-size:12.5px; color:var(--sub); min-width:160px;}
+.maptable .pv{font-size:12.5px; min-width:160px;}
+.maptable tr.miss td{background:#fdf3f1;}
+.maptable tr.by-ai td{background:#f6f2fb;}
+
+/* 값 출처 표시 — 문서에 적힌 값은 표시 없음, 나머지는 신뢰도가 달라 구분한다 */
+.mk.merge{background:#fbe7b5; color:var(--warn);} .mk.conv{background:#dceaf3; color:#0b3a4f;}
+.mk.meta{background:#e3efe8; color:var(--ok);} .mk.ctx{background:#e3efe8; color:var(--ok);}
+.mk.const{background:#ece4f7; color:#4a2e86;} .mk.calc{background:#f4d9d2; color:#7a1a0c;}
+td .mk{margin-left:5px;}
+#result-table{max-height:60vh;}
+
+.rules{list-style:none; margin:8px 0 0;}
+.rules li{display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 12px; padding:8px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
+.rules li:last-child{border-bottom:0;}
+.rules .sub{font-size:12.5px; margin:0;}
+.warn ul,.note ul{margin:6px 0 0 18px;}
+.issues{max-height:260px; overflow:auto;}
+details summary{cursor:pointer; font-weight:650; font-size:14px; margin:10px 0 6px;}
+
+[hidden]{display:none !important;}
+
+/* ===== v1.1 폴더 분류 ===== */
+.fc-group{border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:14px 0;}
+.fc-group h3{margin:0 0 8px;}
+.fc-group h3 .sub{font-weight:400; font-size:13px; margin-left:6px;}
+.fc-group[data-group=check]{border-color:#e7c66b; background:#fffbf0;}
+.fc-group[data-group=none]{background:#fafbfc;}
+.fc-files{list-style:none;}
+.fc-file{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,2fr) auto; gap:6px 14px; align-items:start;
+  padding:9px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
+.fc-file:last-child{border-bottom:0;}
+.fc-name{min-width:0;} .fc-name .chip{margin-top:0;}
+.fc-dir{display:block; color:var(--sub); font-size:12px;}
+.fc-why{min-width:0; font-size:12.5px; color:var(--ink);}
+.fc-score{display:inline-block; font-weight:700; background:#eef2f6; border-radius:5px; padding:0 6px; margin-right:4px;}
+.fc-pick select{font:inherit; font-size:13px; padding:5px 7px; border:1px solid var(--line); border-radius:7px; background:#fff; max-width:100%;}
+@media (max-width:760px){ .fc-file{grid-template-columns:minmax(0,1fr);} }
+.fc-ext{margin:18px 0 26px;}
+.fc-ext h3{margin:0 0 4px;}
+.fc-ext .stats{margin:6px 0 10px;}
+.fc-table{max-height:50vh;}
+.stat.bad{background:#fdeae7; color:#7a1a0c;}
+td.wrapcell{white-space:normal; min-width:180px;}
+.rules-json{display:block; width:100%; margin-top:8px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12.5px;
+  border:1px solid var(--line); border-radius:8px; padding:10px; background:#fbfcfd; resize:vertical;}
+pre.cmd{background:#0d2233; color:#e6f0f7; border-radius:8px; padding:12px 14px; font-size:13px; overflow-x:auto; margin:8px 0 12px;
+  white-space:pre-wrap; word-break:break-all;}
+.lead-link{margin-top:12px;}
+[hidden]{display:none !important;}

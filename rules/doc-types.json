@@ -1,0 +1,118 @@
+{
+  "app": "build-2611-02",
+  "schema": 1,
+  "note": "문서 종류 규칙 — 웹 도구(folder.html)와 tools/folder-run.mjs 가 같은 파일을 씁니다. 예제 종류 3가지는 가짜입니다.",
+  "closeMargin": 2,
+  "types": [
+    {
+      "id": "quote",
+      "name": "견적서",
+      "minScore": 4,
+      "match": {
+        "fileName": [
+          { "word": "견적", "weight": 4 },
+          { "word": "quotation", "weight": 4 },
+          { "word": "quote", "weight": 3 }
+        ],
+        "header": [
+          { "word": "견적금액", "weight": 2 },
+          { "word": "견적수량", "weight": 2 },
+          { "word": "단가", "weight": 1 }
+        ],
+        "body": [
+          { "word": "견적서", "weight": 3 },
+          { "word": "quotation", "weight": 3 },
+          { "word": "견적일", "weight": 2 },
+          { "word": "유효기간", "weight": 2 },
+          { "word": "부가세별도", "weight": 1 }
+        ]
+      },
+      "fields": [
+        { "name": "품번", "type": "code", "required": true },
+        { "name": "품명", "type": "text", "required": true },
+        { "name": "수량", "type": "number", "required": true },
+        { "name": "단가", "type": "number" },
+        { "name": "금액", "type": "number" },
+        { "name": "공급업체", "type": "text", "aliases": [ "상호", "공급자" ] },
+        { "name": "견적일", "type": "date", "aliases": [ "date", "견적일자", "quotationdate" ] }
+      ],
+      "conditions": [
+        { "field": "금액", "op": ">=", "value": 300000 }
+      ]
+    },
+    {
+      "id": "statement",
+      "name": "거래명세서",
+      "minScore": 4,
+      "match": {
+        "fileName": [
+          { "word": "거래명세", "weight": 4 },
+          { "word": "명세", "weight": 2 },
+          { "word": "납품", "weight": 2 },
+          { "word": "invoice", "weight": 3 }
+        ],
+        "header": [
+          { "word": "공급가액", "weight": 2 },
+          { "word": "세액", "weight": 2 },
+          { "word": "납품일", "weight": 2 },
+          { "word": "입고일", "weight": 2 }
+        ],
+        "body": [
+          { "word": "거래명세서", "weight": 3 },
+          { "word": "공급자", "weight": 2 },
+          { "word": "공급받는자", "weight": 2 },
+          { "word": "인수자", "weight": 1 },
+          { "word": "납품", "weight": 1 }
+        ]
+      },
+      "fields": [
+        { "name": "품번", "type": "code", "required": true },
+        { "name": "품명", "type": "text", "required": true },
+        { "name": "수량", "type": "number", "required": true },
+        { "name": "단가", "type": "number" },
+        { "name": "금액", "type": "number" },
+        { "name": "납품일", "type": "date", "aliases": [ "입고일", "거래일", "납품일자" ] },
+        { "name": "공급업체", "type": "text", "aliases": [ "공급자", "상호" ] }
+      ],
+      "conditions": [
+        { "field": "납품일", "op": "between", "value": [ "2026-10-01", "2026-10-31" ] }
+      ]
+    },
+    {
+      "id": "inspection",
+      "name": "검사성적서",
+      "minScore": 4,
+      "match": {
+        "fileName": [
+          { "word": "성적서", "weight": 4 },
+          { "word": "검사", "weight": 3 },
+          { "word": "inspection", "weight": 4 }
+        ],
+        "header": [
+          { "word": "측정값", "weight": 2 },
+          { "word": "판정", "weight": 2 },
+          { "word": "검사항목", "weight": 2 },
+          { "word": "measured", "weight": 2 },
+          { "word": "result", "weight": 1 }
+        ],
+        "body": [
+          { "word": "검사성적서", "weight": 3 },
+          { "word": "inspectionreport", "weight": 3 },
+          { "word": "불합격", "weight": 1 }
+        ]
+      },
+      "fields": [
+        { "name": "품번", "type": "code", "required": true },
+        { "name": "품명", "type": "text" },
+        { "name": "검사항목", "type": "text", "required": true, "aliases": [ "항목", "checkitem", "inspectionitem" ] },
+        { "name": "규격", "type": "text" },
+        { "name": "측정값", "type": "text", "aliases": [ "측정", "측정치", "실측값", "measured", "measurement" ] },
+        { "name": "판정", "type": "text", "required": true, "aliases": [ "결과", "합부", "판정결과", "result" ] },
+        { "name": "검사일", "type": "date", "aliases": [ "date", "검사일자", "inspectiondate" ] }
+      ],
+      "conditions": [
+        { "field": "판정", "op": "contains", "value": [ "NG", "불합격" ] }
+      ]
+    }
+  ]
+}

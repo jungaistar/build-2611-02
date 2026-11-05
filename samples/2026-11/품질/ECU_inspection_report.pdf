@@ -1,0 +1,60 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 891 >>
+stream
+BT /F1 10 Tf
+1 0 0 1 200 760 Tm (INSPECTION REPORT) Tj
+1 0 0 1 50 738 Tm (Vendor : Nuri Electric) Tj
+1 0 0 1 330 738 Tm (Date : 2026-11-01) Tj
+1 0 0 1 50 716 Tm (Part No) Tj
+1 0 0 1 130 716 Tm (Part Name) Tj
+1 0 0 1 250 716 Tm (Check Item) Tj
+1 0 0 1 340 716 Tm (Spec) Tj
+1 0 0 1 420 716 Tm (Measured) Tj
+1 0 0 1 500 716 Tm (Result) Tj
+1 0 0 1 50 694 Tm (ECU-77) Tj
+1 0 0 1 130 694 Tm (Controller) Tj
+1 0 0 1 250 694 Tm (Voltage) Tj
+1 0 0 1 340 694 Tm (24V) Tj
+1 0 0 1 420 694 Tm (24.1V) Tj
+1 0 0 1 500 694 Tm (OK) Tj
+1 0 0 1 50 672 Tm (ECU-77) Tj
+1 0 0 1 130 672 Tm (Controller) Tj
+1 0 0 1 250 672 Tm (Insulation) Tj
+1 0 0 1 340 672 Tm (100MO) Tj
+1 0 0 1 420 672 Tm (85MO) Tj
+1 0 0 1 500 672 Tm (NG) Tj
+1 0 0 1 50 650 Tm (SW-08) Tj
+1 0 0 1 130 650 Tm (Rocker Switch) Tj
+1 0 0 1 250 650 Tm (Torque) Tj
+1 0 0 1 340 650 Tm (2.0Nm) Tj
+1 0 0 1 420 650 Tm (2.1Nm) Tj
+1 0 0 1 500 650 Tm (OK) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001183 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1253
+%%EOF
