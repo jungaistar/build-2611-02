@@ -491,5 +491,13 @@
    "title": "추가개선 방안",
    "text": "CODEX를 사용하고 있는 상황이고 특정 폴더에 등록된 문서를 자동 분류하고 특정 조건의 데이터들을 자동으로 추출하여 저장하는 할 때 Codex 를 최대한 활용하여 정리 및 데이터를 추출하고 웹페이지에 분류된 문서와 결과를 보여주는 형태로 구성하고 싶습니다."
   }
- ]
+ ],
+ "landing": {
+  "company": {
+   "name": "HD건설기계",
+   "en": "HD CONSTRUCTION EQUIPMENT",
+   "logo": "images/logo.png",
+   "logoH": 24
+  }
+ }
 }
